@@ -1,6 +1,6 @@
 repositories { mavenCentral(); maven { url "https://repo.jenkins-ci.org/releases/" } }
 configurations { tool }
-dependencies { tool "org.jenkins-ci.plugins:swarm-client:3.9" } // バージョン指定してください。
+dependencies { tool "org.jenkins-ci.plugins:swarm-client:3.9" }
 
 // https://wiki.jenkins.io/display/JENKINS/Swarm+Plugin
 // https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/
@@ -9,15 +9,15 @@ task start(type: JavaExec) {
     classpath = configurations.tool
     main = "hudson.plugins.swarm.Client"
     args([
-        "-master", "http://xxx.xxx.xxx.xxx/jenkins/", // http://Jenkins のURL
-        "-name", "", // スレーブの名前のプレフィックス
-        "-username", "", // Jenkins にログインするID（管理者権限）
-        "-password", "", // 上記IDのパスワード
-        "-fsroot", "", // スレーブのワークスペースルートパス (ex c:\\windows
-        "-executors", "2", // エグゼキュータの数
+        "-master", "http://xxx.xxx.xxx.xxx/jenkins/",
+        "-name", "",
+        "-username", "",
+        "-password", "",
+        "-fsroot", "",
+        "-executors", "2",
         "-deleteExistingClients",
-        "-labels", ["windows-slave","msbuild"].join(" "), // ラベル
-        "-mode", "exclusive", // 排他モード
+        "-labels", ["example1","example2"].join(" "),
+        "-mode", "exclusive",
     ])
 }
 defaultTasks "start"
