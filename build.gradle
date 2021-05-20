@@ -1,6 +1,6 @@
 repositories { mavenCentral(); maven { url "https://repo.jenkins-ci.org/releases/" } }
 configurations { tool }
-dependencies { tool "org.jenkins-ci.plugins:swarm-client:3.25" }
+dependencies { tool "org.jenkins-ci.plugins:swarm-client:3.26" }
 
 // https://wiki.jenkins.io/display/JENKINS/Swarm+Plugin
 // https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/
